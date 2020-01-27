@@ -16,23 +16,22 @@
     <script type="text/babel">
       // Your scripts goes here
       function NewName() {
-        const [name, setfirstName, setlastName] = React.useState('');
+        const [name, setName] = React.useState({firstName: '', lastName: '' });
+
         const inputChanged = (event) => {
-           setName(event.target.value); 
+           setName({...name, [event.target.name]: event.target.value}); 
         };
 
         return (
             <div>
-             <div> Hello {name}</div>
-             <input type='text' value={firstName} onChange={inputChanged} />
-             <input type='text' value={lastName} onChange={inputChanged} />
-             <button onClick=''>send</button>
+             <input type='text' name="firstName" value={name.firstName} onChange={inputChanged} />
+             <input type='text' name="lastName" value={name.lastName} onChange={inputChanged} />
+             <button onClick={() => alert("Hello " + name.firstName + " " + name.lastName)}>send</button>
             </div>
         );
       };
 
-      ReactDOM.render(<NewName/>,
-      document.getElementById('root'));
+      ReactDOM.render(<NewName/>, document.getElementById('root'));
     </script>
   </body>
 </html>
