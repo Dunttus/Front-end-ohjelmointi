@@ -15,12 +15,38 @@
 
     <script type="text/babel">
       // Your scripts goes here
-      function HelloComponent(props) {
-        return <div id='root'> Hello World {props.firstname}</div>
-      }
+      function NewUser() {
+        const [user, setUser] = React.useState({nameUser: '', ageUser: '' });
+        const [teksti, setTeksti] = React.useState('');
 
-      ReactDOM.render(<HelloComponent firstname="joni" />,
-      document.getElementById('root'));
+        const inputChanged = (event) => {
+           setUser({...user, [event.target.name]: event.target.value}); 
+        };
+
+        const formSubmitted = (event) => {
+          event.preventDefault();
+          if (ageUser > 18){
+              {() => setTeksti("testi1")}
+          } else {
+              {() => setTeksti("testi2")}
+            }    
+        }
+
+        return (
+          <div>
+            <p>hello{teksti}</p>
+            <form onSubmit={formSubmitted}>
+                Name: <input type='text' name="nameUser" value={user.nameUser} onChange={inputChanged} />
+                <br></br>
+                Age: <input type='text' name="ageUser" value={user.ageUser} onChange={inputChanged} />
+                <br></br>
+                <input type="submit" value="Submit" />
+            </form>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<NewUser/>, document.getElementById('root'));
     </script>
   </body>
 </html>
