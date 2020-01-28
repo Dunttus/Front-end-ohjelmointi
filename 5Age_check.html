@@ -25,7 +25,7 @@
 
         const formSubmitted = (event) => {
           event.preventDefault();
-          if (user.ageUser > 18){
+          if (user.ageUser >= 18){
               setTeksti("Hello" + " " + user.nameUser)
           } else {
               setTeksti("You are too young")
