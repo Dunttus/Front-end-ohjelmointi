@@ -25,16 +25,16 @@
 
         const formSubmitted = (event) => {
           event.preventDefault();
-          if (ageUser > 18){
-              {() => setTeksti("testi1")}
+          if (user.ageUser > 18){
+              setTeksti("Hello" + " " + user.nameUser)
           } else {
-              {() => setTeksti("testi2")}
+              setTeksti("You are too young")
             }    
         }
 
         return (
           <div>
-            <p>hello{teksti}</p>
+            <p>{teksti}</p>
             <form onSubmit={formSubmitted}>
                 Name: <input type='text' name="nameUser" value={user.nameUser} onChange={inputChanged} />
                 <br></br>
