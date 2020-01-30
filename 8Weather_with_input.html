@@ -15,11 +15,38 @@
 
     <script type="text/babel">
       // Your scripts goes here
-      function NewUser(props) {
-        return <div id='root'> Hello World {props.firstname}</div>
-      }
+      const AskWeather = () => {
+        const [temps, setTemps] = React.useState('');
+        const [weather, setWeather] = React.useState('');
+        const [imgurl, setImgurl] = React.useState('');
+        const [city, setCity] = React.useState('');
+                  
+          const inputChanged = (event) => {
+            setCity(event.target.value); 
+            };
 
-      ReactDOM.render(<NewUser/>, document.getElementById('root'));
+          const newCity = () => {
+              fetch("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&APPID=YOUR_API_KEY")
+              .then(response => response.json())
+              .then ((responseData) => {
+                  setTemps(responseData.main.temp);
+                  setWeather(responseData.weather[0].description);
+                  setImgurl(responseData.weather[0].icon);
+              });            
+          };
+                
+        return (          
+            <div>
+              <input type='text' value={city} onChange={inputChanged} />              
+              <button onClick={newCity}>send</button>
+              <p>Temperature: {temps}</p>
+              <p>Weather: {weather}</p>
+              <img src={"http://openweathermap.org/img/wn/" + imgurl + "@2x.png"} />
+            </div>         
+        );
+      };
+
+      ReactDOM.render(<AskWeather/>, document.getElementById('root'));
     </script>
   </body>
 </html>

@@ -15,11 +15,26 @@
 
     <script type="text/babel">
       // Your scripts goes here
-      function NewUser(props) {
-        return <div id='root'> Hello World {props.firstname}</div>
-      }
+      const RestQuestion = () => {
+        const [question, setQuestion] = React.useState('');
+        
+          const newTrivia = () => {
+              fetch('https://opentdb.com/api.php?amount=1')
+              .then(response => response.json())
+              .then ((responseData) => {
+                  setQuestion(responseData.results[0].question);
+              });            
+          } 
 
-      ReactDOM.render(<NewUser/>, document.getElementById('root'));
+        return (
+            <div>
+                <p>question:{question}</p>
+                <button onClick={newTrivia}>New </button>
+            </div>
+        );
+      };
+
+      ReactDOM.render(<RestQuestion/>, document.getElementById('root'));
     </script>
   </body>
 </html>

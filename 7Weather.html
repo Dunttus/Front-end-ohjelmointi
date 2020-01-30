@@ -15,11 +15,31 @@
 
     <script type="text/babel">
       // Your scripts goes here
-      function NewUser(props) {
-        return <div id='root'> Hello World {props.firstname}</div>
-      }
+      const AskWeather = () => {
+        const [temps, setTemps] = React.useState('');
+        const [weather, setWeather] = React.useState('');
+        const [imgurl, setImgurl] = React.useState('');
+        
+          React.useEffect(() => {
+              fetch('http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=YOUR_API_KEY')
+              .then(response => response.json())
+              .then ((responseData) => {
+                  setTemps(responseData.main.temp);
+                  setWeather(responseData.weather[0].description);
+                  setImgurl(responseData.weather[0].icon);
+              });            
+          }, [])
 
-      ReactDOM.render(<NewUser/>, document.getElementById('root'));
+        return (
+            <div>
+                <p>Temperature: {temps}</p>
+                <p>Weather: {weather}</p>
+                <img src={"http://openweathermap.org/img/wn/" + imgurl + "@2x.png"} />
+            </div>
+        );
+      };
+
+      ReactDOM.render(<AskWeather/>, document.getElementById('root'));
     </script>
   </body>
 </html>
