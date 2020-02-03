@@ -6,21 +6,45 @@
   </head>
   <body>
     <!-- Root container for react components -->
-    
     <div id='root'></div>
- 
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-
+    
     <script type="text/babel">
-      // Your scripts goes here
-      function HelloComponent(props) {
-        return <div id='root'> Hello World {props.firstname}</div>
+      const RestList = () => {
+        const [listItems, setListItems] = React.useState([]);
+    
+        React.useEffect(() => {
+          fetch('https://api.github.com/search/repositories?q=react')
+          .then(response => response.json()) 
+          .then(responseData => { 
+            setListItems(responseData.data)
+          })
+          .catch(err => console.error(err))
+        }, [])
+        
+        const itemRows = listItems.map((gitsivut) => 
+            <tr key={gitsivu.id}>
+              <td>{gitsivu.html_url}</td>
+              <td>{gitsivu.html_url}</td>            
+            </tr>        
+        )
+           
+          return (
+            <div>
+              <h2>Name</h2>
+              <table>
+                <tbody>
+                  <tr><th>Name</th><th>URL</th></tr>
+                  {itemRows}
+                </tbody>
+              </table>
+            </div>
+          );
       }
 
-      ReactDOM.render(<HelloComponent firstname="joni" />,
-      document.getElementById('root'));
+      ReactDOM.render(<RestList />, document.getElementById('root'));
     </script>
   </body>
 </html>
