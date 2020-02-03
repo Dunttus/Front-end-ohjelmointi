@@ -19,21 +19,22 @@
           fetch('https://api.github.com/search/repositories?q=react')
           .then(response => response.json()) 
           .then(responseData => { 
-            setListItems(responseData.data)
+            setListItems(responseData.items)
           })
           .catch(err => console.error(err))
         }, [])
         
-        const itemRows = listItems.map((gitsivut) => 
+        const itemRows = listItems.map((gitsivu) => 
             <tr key={gitsivu.id}>
-              <td>{gitsivu.html_url}</td>
-              <td>{gitsivu.html_url}</td>            
+              <td>{gitsivu.full_name}</td>
+              <td><a href={gitsivu.html_url}>{gitsivu.html_url}</a></td>
             </tr>        
-        )
+        );
+        
            
           return (
             <div>
-              <h2>Name</h2>
+              <h2>Repositories</h2>
               <table>
                 <tbody>
                   <tr><th>Name</th><th>URL</th></tr>
