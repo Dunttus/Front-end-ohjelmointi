@@ -12,8 +12,9 @@ React, node.js, Javascript.
 **8. Weather_with_input.html:** Hakee käyttäjä inputin mukaisen kaupungin sää tiedon. \
 **9. Show_avatar.html:** Hakee sivulle testi käyttäjän nimen e-mailin ja kuvan. \
 **10. Github_repos.html:** Hakee Githubista kaikki React aiheiset sivut. \
-**11. Github_with_input.html** Hakee käyttäjä syötteen mukaan Github sivuja. \
+**11. Github_with_input.html:** Hakee käyttäjä syötteen mukaan Github sivuja. \
+**101. React_networking.html:** Harjoitustentti hakee uuden käyttäjän napista \
 
 
 ## Lähteet
-Juha Hinkula 2020, Haaga-Helia: Front end -ohjelmointi kurssi.
+Juha Hinkula 2020, Haaga-Helia: Front end -ohjelmointi kurssi SWD4TN026-3003.
