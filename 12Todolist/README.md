@@ -2,8 +2,8 @@
 React, node.js, Javascript.
 
 
-## Kansiot
-**/asd** - Tehtävä lista joka\
+## Tehtävä
+**/12Todolist** - Tehtävä lista, johon voi lisätä kuvauksen ja ajankohdan.
 
 
 ## Lähteet
