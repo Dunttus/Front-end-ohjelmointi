@@ -3,7 +3,7 @@ React, node.js, Javascript.
 
 
 ## Tehtävä
-**/12Todolist** - Tehtävä lista, johon voi lisätä kuvauksen ja ajankohdan.
+**12Todolist** - Tehtävä lista, johon voi lisätä kuvauksen ja ajankohdan.
 
 
 ## Lähteet
