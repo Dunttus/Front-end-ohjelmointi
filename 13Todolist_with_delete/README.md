@@ -2,8 +2,8 @@
 React, node.js, Javascript.
 
 
-## Kansiot
-**/asd** - Tehtävä lista joka\
+## Tehtävä
+**13Todolist_with_delete** - Tehtävä lista, josta voidaan poistaa tehtäviä\
 
 
 ## Lähteet
