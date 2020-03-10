@@ -2,8 +2,8 @@
 React, node.js, Javascript.
 
 
-## Kansiot
-**/asd** - Tehtävä lista joka\
+## Tehtävä
+**14 Separate_components** - Tehtävä lista, jossa on komponentit eri tiedostoissa. \
 
 
 ## Lähteet
