@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../App.css';
-import Todolist from './Todolist.js'
 
 export default function TodoTable(props) {
     
