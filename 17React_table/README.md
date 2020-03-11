@@ -1,6 +1,10 @@
 # Front-end--ohjelmointi
 React, node.js, Javascript.
 
+# Terminaali komennot
+```
+yarn add react-table
+```
 
 ## Tehtävä
 **/17React_table** - Tehtävä lista, jossa table elementit haetaan [Tannerlinsleys gitistä](https://github.com/tannerlinsley/react-table).
