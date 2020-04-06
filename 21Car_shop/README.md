@@ -13,7 +13,8 @@ yarn start
 ```
 
 ## Tehtävä
-**21_Car_Shop** - Carshop tietokanta, josta voidaan muokata, poistaa ja lisätä autoja. 
+**21_Car_Shop** - Carshop tietokanta, josta voidaan muokata, poistaa ja lisätä autoja. \
+ \
 ![Car Shop](../img/carshop.PNG)
 
 ## Lähteet
