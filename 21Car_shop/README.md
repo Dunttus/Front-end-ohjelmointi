@@ -1,5 +1,5 @@
 # Front-end--ohjelmointi
-React, node.js, Javascript.
+React, YARN, npm, Node.js, JavaScript, React-table, React router, Material-UI.
 
 # Terminaali komennot
 Projektin alustus, Material-UI ja React table asennus.
@@ -14,7 +14,7 @@ yarn start
 
 ## Tehtävä
 **21_Car_Shop** - Carshop tietokanta, josta voidaan muokata, poistaa ja lisätä autoja. 
-
+![Car Shop](../img/carshop.PNG)
 
 ## Lähteet
 Juha Hinkula 2020, Haaga-Helia: Front end -ohjelmointi kurssi SWD4TN026-3003. \
