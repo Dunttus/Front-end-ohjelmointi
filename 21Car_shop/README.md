@@ -2,15 +2,18 @@
 React, node.js, Javascript.
 
 # Terminaali komennot
-Material-UI ja React table asennus.
+Projektin alustus, Material-UI ja React table asennus.
 ```
+npx create-react-app carfront
+cd carfront
 yarn add @material-ui/core
 yarn add @material-ui/icons
-yean add react-table-v6
+yarn add react-table-v6
+yarn start
 ```
 
 ## Tehtävä
-**21_Car_Shop** - Carshop site.. 
+**21_Car_Shop** - Carshop tietokanta, josta voidaan muokata, poistaa ja lisätä autoja. 
 
 
 ## Lähteet
@@ -20,3 +23,4 @@ Navigation bar: https://material-ui.com/components/app-bar/ \
 Fetch functions: https://github.com/github/fetch \
 Delete button styles: https://material-ui.com/components/buttons/ \
 Popup messages after deletion: https://material-ui.com/components/snackbars/ \
+Dialog box: https://material-ui.com/components/dialogs/
