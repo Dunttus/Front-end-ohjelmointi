@@ -13,9 +13,14 @@ yarn start
 ```
 
 ## Tehtävä
-**22Personal_trainer** - Henkilökohtainen valmentaja tietokanta front-end, josta voidaan hakea ja lajitella asiakkaita. \
+**22Personal_trainer** - Henkilökohtainen valmentaja tietokanta front-end, josta voidaan hakea, lajitella, lisätä ja poistaa asiakkaita. \
  \
-![Trainer Table](../img/trainer_v2.PNG)
+Adding new customer
+![Trainer Table](../img/trainer_v3.PNG)
+\
+Customer added successfully
+![Trainer Table](../img/trainer_v4.PNG)
+
 
 ## Lähteet
 Juha Hinkula 2020, Haaga-Helia: Front end -ohjelmointi kurssi SWD4TN026-3003. \
