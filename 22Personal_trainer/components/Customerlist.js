@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import MaterialTable from "material-table";
-
-import Search from '@material-ui/icons/Search';
-import CloseIcon from '@material-ui/icons/Close';
-import Remove from '@material-ui/icons/Remove';
-import ChevronLeft from '@material-ui/icons/ChevronLeft';
-import ChevronRight from '@material-ui/icons/ChevronRight';
-import FirstPage from '@material-ui/icons/FirstPage';
-import LastPage from '@material-ui/icons/LastPage';
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
-
+import ReactTable from 'react-table-v6'
+import 'react-table-v6/react-table.css'
 
 export default function Customerlist() {
     const [customers, setCustomers] = useState([]);
@@ -27,49 +18,34 @@ export default function Customerlist() {
 
     const columns = [
         {
-            title: 'Firstname',
-            field: 'firstname'
+            Header: 'Firstname',
+            accessor: 'firstname'
         },
         {
-            title: 'Lastname',
-            field: 'lastname'
+            Header: 'Lastname',
+            accessor: 'lastname'
         },
         {
-            title: 'Email',
-            field: 'email'
+            Header: 'Email',
+            accessor: 'email'
         },
         {
-            title: 'Phone',
-            field: 'phone'
+            Header: 'Phone',
+            accessor: 'phone'
         },
         {
-            title: 'Address',
-            field: 'streetaddress'
+            Header: 'Streetaddress',
+            accessor: 'streetaddress'
         },
         {
-            title: 'City',
-            field: 'city'
+            Header: 'City',
+            accessor: 'city'
         }
     ]
 
     return(
         <div>
-            <MaterialTable title="Customers"
-            data={customers}
-            columns={columns}
-            icons={{ 
-                Search: Search,
-                DetailPanel: ChevronRight,
-                ResetSearch: CloseIcon,
-                FirstPage: FirstPage,
-                LastPage: LastPage,
-                NextPage: ChevronRight,
-                PreviousPage: ChevronLeft,
-                ThirdStateCheck: Remove,
-                SortArrow: ArrowDownward,
-              }}
-            
-            />
+            <ReactTable defaultPageSize={10}  filterable={true} data={customers} columns={columns} />
         </div>
     )
 }
