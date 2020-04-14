@@ -4,8 +4,8 @@ React, YARN, npm, Node.js, JavaScript, React-table, React router, Material-UI.
 # Terminaali komennot
 Projektin alustus, Material-UI ja React table asennus.
 ```
-npx create-react-app carfront
-cd carfront
+npx create-react-app trainer
+cd trainer
 yarn add @material-ui/core
 yarn add @material-ui/icons
 yarn add react-table-v6
@@ -13,7 +13,7 @@ yarn start
 ```
 
 ## Tehtävä
-**21Car_shop** - Carshop tietokanta, josta voidaan muokata, poistaa ja lisätä autoja. \
+**22Personal_trainer** - Henkilökohtainen valmentaja tietokanta, josta voidaan muokata, poistaa ja lisätä asiakkaita. \
  \
 ![Car Shop](../img/carshop.PNG)
 

@@ -7,8 +7,9 @@ React, YARN, npm, Node.js, JavaScript, React-table, React router, Material-UI.
 **/13Todolist_with_delete** - Tehtävä lista, josta voidaan poistaa tehtäviä. \
 **/14Separate_components** - Tehtävä lista, jossa on komponentit eri tiedostoissa. \
 **/17React_table** - Tehtävä lista, jossa table elementit haetaan [Tannerlinsleys gitistä](https://github.com/tannerlinsley/react-table). \
-**/18 React_router** - React Router ja Navbar testi. \
-**/21_Car_Shop** - Carshop tietokanta, josta voidaan muokata, poistaa ja lisätä autoja.
+**/18React_router** - React Router ja Navbar testi. \
+**/21Car_shop** - Carshop tietokanta, josta voidaan muokata, poistaa ja lisätä autoja. \
+**/22Personal_trainer** - Henkilökohtainen valmentaja tietokanta, josta voidaan muokata, poistaa ja lisätä asiakkaita.
 
 ## Lähteet
 Juha Hinkula 2020, Haaga-Helia: Front end -ohjelmointi kurssi SWD4TN026-3003.
