@@ -9,6 +9,8 @@ cd trainer
 yarn add @material-ui/core
 yarn add @material-ui/icons
 yarn add react-table-v6
+yarn add react-router-dom
+yarn add bootstrap
 yarn start
 ```
 
@@ -27,3 +29,5 @@ Juha Hinkula 2020, Haaga-Helia: Front end -ohjelmointi kurssi SWD4TN026-3003. \
 React table v6: https://github.com/tannerlinsley/react-table/tree/v6#installation \
 Navigation bar: https://material-ui.com/components/app-bar/ \
 Fetch functions: https://github.com/github/fetch \
+React router: https://reacttraining.com/react-router/
+Bootstrap Navbars: https://getbootstrap.com/docs/4.4/examples/
