@@ -8,7 +8,10 @@ npx create-react-app trainer
 cd trainer
 yarn add @material-ui/core
 yarn add @material-ui/icons
-yarn add material-table
+yarn add react-table-v6
+yarn add react-router-dom
+yarn add bootstrap
+yarn add moment react-moment
 yarn start
 ```
 
@@ -22,3 +25,4 @@ Juha Hinkula 2020, Haaga-Helia: Front end -ohjelmointi kurssi SWD4TN026-3003. \
 Material table: https://github.com/mbrn/material-table \
 Navigation bar: https://material-ui.com/components/app-bar/ \
 Fetch functions: https://github.com/github/fetch \
+React-moment: https://www.npmjs.com/package/react-moment

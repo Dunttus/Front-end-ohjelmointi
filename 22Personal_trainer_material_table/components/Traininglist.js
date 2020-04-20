@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from "material-table";
+import Moment from 'react-moment';
 
 import Search from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
@@ -12,53 +13,39 @@ import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Delete from "@material-ui/icons/Delete";
 
 
-export default function Customerlist() {
-    const [customers, setCustomers] = useState([]);
-
+export default function Traininglist() {
+    const [trainings, setTrainings] = useState([]);
 
     useEffect(() => {
-        getCustomers();
+        getTrainings();
     }, [])
 
-    const getCustomers = () => {
-        fetch('https://customerrest.herokuapp.com/api/customers')
+    const getTrainings = () => {
+        fetch('https://customerrest.herokuapp.com/api/trainings')
         .then(response => response.json())
-        .then(data => setCustomers(data.content))
+        .then(data => setTrainings(data.content))
         .catch(err => console.error(err))
     }
 
-
     const columns = [
         {
-            title: 'Firstname',
-            field: 'firstname'
+            title: 'Activity',
+            field: 'activity'
         },
         {
-            title: 'Lastname',
-            field: 'lastname'
+            title: 'Date',
+            field: 'date'
         },
         {
-            title: 'Email',
-            field: 'email'
-        },
-        {
-            title: 'Phone',
-            field: 'phone'
-        },
-        {
-            title: 'Address',
-            field: 'streetaddress'
-        },
-        {
-            title: 'City',
-            field: 'city'
+            title: 'Min',
+            field: 'duration'
         }
     ]
 
     return(
         <div>
-            <MaterialTable title="Customers"
-            data={customers}
+            <MaterialTable title="Trainings"
+            data={trainings}
             columns={columns}
             icons={{ 
                 Search: Search,
