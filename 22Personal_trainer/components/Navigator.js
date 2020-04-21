@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const Navigator = () => {
     return (
         <div>
@@ -16,7 +17,7 @@ const Navigator = () => {
                         <Link className="nav-link" to="/">Customer List</Link>
                     </li>
                     <li class="nav-item">
-                        <Link className="nav-link" to="/Traininglist">Training List</Link>>
+                        <Link className="nav-link" to="/Traininglist">Training List</Link>
                     </li>
                     </ul>                    
                 </div>

@@ -6,12 +6,14 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Snackbar from '@material-ui/core/Snackbar';
 import Addcustomer from './Addcustomer';
 import Editcustomer from './Editcustomer';
+import Addtraining from './Addtraining';
 
 
 export default function Customerlist() {
     const [customers, setCustomers] = useState([]);
     const [open, setOpen] = useState(false);
     const [msg, setMsg] = useState('');
+    const [customerid, setCustomerid] = useState('');
 
     useEffect(() => {
         getCustomers();
@@ -68,13 +70,38 @@ export default function Customerlist() {
           setOpen(true);
         })
         .catch(err => console.error(err))  
-    } 
+    }
+    
+    const newTraining = (training) => {
+        fetch("customerid",
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(training)
+            }
+        )
+        .then(_ => getCustomers())
+        .then(_ => {
+            setMsg('New training added');
+            setOpen(true);
+        })
+        .catch(err => console.error(err))
+    }
 
     const handleClose = () => {
         setOpen(false);
     }
 
     const columns = [
+        {
+            accessor: 'links[0].href',
+            filterable: false,
+            sortable: false,
+            width: 165,
+            // Cell: row => (<ButtononClick=><Addtraining training={row.original.links[0].href} newTraining={newTraining}/></Button>)
+        },
         {
             Header: 'Firstname',
             accessor: 'firstname'
@@ -100,9 +127,15 @@ export default function Customerlist() {
             accessor: 'city'
         },
         {
-            Cell: row => (<Editcustomer customer={row.original} updateCustomer={updateCustomer} />)
+            filterable: false,
+            sortable: false,
+            width: 100,
+            Cell: row => (<Editcustomer training={row.original} updateCustomer={updateCustomer} />)
         },
         {
+            filterable: false,
+            sortable: false,
+            width: 100,
             Cell: row => (<Button startIcon={<DeleteIcon />} color="secondary" onClick={() => deleteCustomer(row.original.links[0].href)}>Delete</Button>)
         }
     ]

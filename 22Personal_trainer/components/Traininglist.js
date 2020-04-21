@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import ReactTable from 'react-table-v6'
 import 'react-table-v6/react-table.css'
+import Moment from 'react-moment';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Snackbar from '@material-ui/core/Snackbar';
-import Addcustomer from './Addcustomer';
-import Editcustomer from './Editcustomer';
+
 
 export default function Traininglist() {
     const [trainings, setTrainings] = useState([]);
+    const [open, setOpen] = useState(false);
+    const [msg, setMsg] = useState('');
 
     useEffect(() => {
         getTrainings();
@@ -21,6 +23,23 @@ export default function Traininglist() {
         .catch(err => console.error(err))
     }
 
+    const deleteTraining = (link) => {
+        if (window.confirm('Are you sure?')) {
+            fetch(link, {method: 'DELETE'})
+            .then(_ => getTrainings())
+            .then(_ => {
+                setMsg('Training Deleted');
+                setOpen(true);
+            })
+            .catch(err => console.error(err))
+        }
+    }
+
+    const handleClose = () => {
+        setOpen(false);
+    }
+
+
     const columns = [
         {
             Header: "Activity",
@@ -28,7 +47,7 @@ export default function Traininglist() {
         },
         {
             Header: "Date",
-            accessor: "date"
+            Cell: row => (<Moment format="YYYY MMM D" withTitle>{"date"}</Moment>)
         },
         {
             Header: "Min",
@@ -36,7 +55,13 @@ export default function Traininglist() {
         },
         {
             Header: "Customer",
-            accessor: "links[0].href.firstname"
+            accessor: "links[0].href"
+        },
+                {
+            filterable: false,
+            sortable: false,
+            width: 100,
+            Cell: row => (<Button startIcon={<DeleteIcon />} color="secondary" onClick={() => deleteTraining(row.original.links[0].href)}>Delete</Button>)
         }
         
     ]
@@ -44,6 +69,16 @@ export default function Traininglist() {
     return(
         <div>
             <ReactTable defaultPageSize={10}  filterable={true} data={trainings} columns={columns} />
+            <Snackbar
+                open={open}
+                autoHideDuration={3000}
+                onClose={handleClose}
+                message={msg}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left'                
+                }}
+            />
         </div>
     )
 }

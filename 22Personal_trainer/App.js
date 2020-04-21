@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Customerlist from './components/Customerlist';
 import Traininglist from './components/Traininglist';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigator from './components/Navigator';
 import {BrowserRouter as Router ,Switch, Route, Link} from "react-router-dom";
+
 
 function App() {
   return (
@@ -16,9 +14,9 @@ function App() {
       <div>
         <Navigator />
           <Switch>
-          <Route path="/Traininglist" component={Traininglist}/>
-          <Route exact path="/" component={Customerlist}/>
-          <Route render={() => <h1>Page not found</h1>}/>
+            <Route path="/Traininglist" component={Traininglist}/>
+            <Route exact path="/" component={Customerlist}/>
+            <Route render={() => <h1>Page not found</h1>}/>
           </Switch>
       </div>
     </Router>

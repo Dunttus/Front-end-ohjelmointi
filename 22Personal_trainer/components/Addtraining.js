@@ -7,16 +7,16 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 
-export default function Addcustomer(props) {
+export default function Addtraining(props) {
     const [open, setOpen] = useState(false);
-    const [customer, setCustomer] = useState({firstname:'', lastname:'', email:'', phone:'', streetaddress:'', city:''});
+    const [training, setTraining] = useState({activity:'', date:'', duration:''});
 
 const handleClickOpen = () => {
     setOpen(true);
 }
 
 const handleClose = () => {
-    props.addCustomer(customer);
+    props.addTraining(training);
     setOpen(false);
 }
 
@@ -25,70 +25,43 @@ const handleCancel = () => {
 }
 
 const inputChanged = (event) => {
-    setCustomer({...customer, [event.target.name]: event.target.value});
+    setTraining({...training, [event.target.name]: event.target.value});
 }
 
     return(
         <div>
             <Button style={{margin: 10}} variant="outlined" color="primary" onClick={handleClickOpen}>
-                Add customer
+                New training
             </Button>
             <Dialog open={open} disableBackdropClick={true} disableEscapeKeyDown={true} onClose={handleClose} aria-labelledby="form-dialog-title">
-            <DialogTitle id="form-dialog-title">New customer</DialogTitle>
+            <DialogTitle id="form-dialog-title">New training</DialogTitle>
             <DialogContent>
             <TextField
                 autoFocus
                 margin="dense"
-                id="firstname"
-                name="firstname"
-                value={customer.firstname}
+                id="activity"
+                name="activity"
+                value={training.activity}
                 onChange={inputChanged}
-                label="Firstname"
+                label="Activity"
                 fullWidth
             />
             <TextField
                 margin="dense"
-                id="lastname"
-                name="lastname"
-                value={customer.lastname}
+                id="date"
+                name="date"
+                value={training.date}
                 onChange={inputChanged}
-                label="Lastname"
+                label="Date"
                 fullWidth
             />
             <TextField
                 margin="dense"
-                id="email"
-                name="email"
-                value={customer.email}
+                id="duration"
+                name="duration"
+                value={training.duration}
                 onChange={inputChanged}
-                label="Email"
-                fullWidth
-            />
-            <TextField
-                margin="dense"
-                id="phone"
-                name="phone"
-                value={customer.phone}
-                onChange={inputChanged}
-                label="Phone"
-                fullWidth
-            />
-            <TextField
-                margin="dense"
-                id="streetaddress"
-                name="streetaddress"
-                value={customer.streetaddress}
-                onChange={inputChanged}
-                label="Address"
-                fullWidth
-            />
-            <TextField
-                margin="dense"
-                id="city"
-                name="city"
-                value={customer.city}
-                onChange={inputChanged}
-                label="City"
+                label="Duration mins"
                 fullWidth
             />
             </DialogContent>
