@@ -13,8 +13,7 @@ export default function Customerlist() {
     const [customers, setCustomers] = useState([]);
     const [open, setOpen] = useState(false);
     const [msg, setMsg] = useState('');
-    const [customerid, setCustomerid] = useState('');
-
+    
     useEffect(() => {
         getCustomers();
     }, [])
@@ -56,6 +55,24 @@ export default function Customerlist() {
         .catch(err => console.error(err))
     }
 
+    const newTraining = (training) => {
+        fetch(Addtraining.getUserid,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(training)
+            }
+        )
+        .then(_ => Addtraining.getTraining())
+        .then(_ => {
+            setMsg('New training added');
+            setOpen(true);
+        })
+        .catch(err => console.error(err))
+    }
+
     const updateCustomer = (link, customer) => {
         fetch(link, {
           method: 'PUT',
@@ -71,36 +88,20 @@ export default function Customerlist() {
         })
         .catch(err => console.error(err))  
     }
-    
-    const newTraining = (training) => {
-        fetch("customerid",
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type':'application/json'
-                },
-                body: JSON.stringify(training)
-            }
-        )
-        .then(_ => getCustomers())
-        .then(_ => {
-            setMsg('New training added');
-            setOpen(true);
-        })
-        .catch(err => console.error(err))
-    }
 
     const handleClose = () => {
         setOpen(false);
     }
 
+
+
     const columns = [
         {
-            accessor: 'links[0].href',
+            accessor: 'links[2].href',
             filterable: false,
             sortable: false,
             width: 165,
-            // Cell: row => (<ButtononClick=><Addtraining training={row.original.links[0].href} newTraining={newTraining}/></Button>)
+            Cell: ({value}) => (<Addtraining newTraining={newTraining} />)
         },
         {
             Header: 'Firstname',
@@ -130,7 +131,7 @@ export default function Customerlist() {
             filterable: false,
             sortable: false,
             width: 100,
-            Cell: row => (<Editcustomer training={row.original} updateCustomer={updateCustomer} />)
+            Cell: row => (<Editcustomer customer={row.original} updateCustomer={updateCustomer} />)
         },
         {
             filterable: false,

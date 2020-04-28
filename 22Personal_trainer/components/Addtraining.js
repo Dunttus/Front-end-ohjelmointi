@@ -10,10 +10,13 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 export default function Addtraining(props) {
     const [open, setOpen] = useState(false);
     const [training, setTraining] = useState({activity:'', date:'', duration:''});
+    const [userid, setUserid] = useState('');
 
 const handleClickOpen = () => {
+    // userid=(row.original.links[2].href);
     setOpen(true);
 }
+
 
 const handleClose = () => {
     props.addTraining(training);

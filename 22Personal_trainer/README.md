@@ -25,7 +25,8 @@ Customer added successfully
 ![Trainer Table](../img/trainer_v4.PNG)
 
 ## Todo
-Customerlist asiakkaille ajan varaus nappi kommentoitu pois tällä hetkellä \ 
+Customerlist asiakkaille ajan varaus nappi toimimaan \ 
+Haetaan Customerlistiin asiakas nimi \
 Traininglist moment ajat toimimaan sanoo invalid date tälää hetkellä
 
 ## Lähteet

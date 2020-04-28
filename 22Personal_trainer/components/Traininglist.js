@@ -5,6 +5,7 @@ import Moment from 'react-moment';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Snackbar from '@material-ui/core/Snackbar';
+import Addtraining from './Addtraining';
 
 
 export default function Traininglist() {
@@ -35,6 +36,7 @@ export default function Traininglist() {
         }
     }
 
+
     const handleClose = () => {
         setOpen(false);
     }
@@ -57,7 +59,7 @@ export default function Traininglist() {
             Header: "Customer",
             accessor: "links[0].href"
         },
-                {
+        {
             filterable: false,
             sortable: false,
             width: 100,
