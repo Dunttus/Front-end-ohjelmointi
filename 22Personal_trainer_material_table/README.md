@@ -1,5 +1,5 @@
 # Front-end--ohjelmointi
-School project by Joni Hakala [Dunttus](http://dunttus.com/).
+School project by Joni Hakala [(Dunttus)](http://dunttus.com/). \
 React, YARN, npm, Node.js, JavaScript, Material-table, Material-icons, React-router-dom, Material-bar, Material-UI.
 
 # Terminaali komennot
