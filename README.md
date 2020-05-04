@@ -1,4 +1,5 @@
 # Front-end--ohjelmointi
+School project by Joni Hakala [Dunttus](http://dunttus.com/).
 React, YARN, npm, Node.js, JavaScript, React-table, React router, Material-UI.
 
 ## Kansiot
@@ -9,7 +10,9 @@ React, YARN, npm, Node.js, JavaScript, React-table, React router, Material-UI.
 **/17React_table** - Tehtävä lista, jossa table elementit haetaan [Tannerlinsleys gitistä](https://github.com/tannerlinsley/react-table). \
 **/18React_router** - React Router ja Navbar testi. \
 **/21Car_shop** - Carshop tietokanta, josta voidaan muokata, poistaa ja lisätä autoja. \
+**/22Personal_trainer_material_table** - Henkilökohtainen valmentaja tietokanta, josta voidaan etsiä asiakkaita ja treenaus aikoja.
 **/22Personal_trainer** - Henkilökohtainen valmentaja tietokanta, josta voidaan muokata, poistaa ja lisätä asiakkaita.
+
 
 ## Lähteet
 Juha Hinkula 2020, Haaga-Helia: Front end -ohjelmointi kurssi SWD4TN026-3003.
