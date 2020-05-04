@@ -13,15 +13,25 @@ export default function Customerlist() {
     const [customers, setCustomers] = useState([]);
     const [open, setOpen] = useState(false);
     const [msg, setMsg] = useState('');
-    
+    const [userid, setUserid] = useState('');
+    const [trainings, setTrainings] = useState([]);
+
     useEffect(() => {
         getCustomers();
+        getTrainings();
     }, [])
 
     const getCustomers = () => {
         fetch('https://customerrest.herokuapp.com/api/customers')
         .then(response => response.json())
         .then(data => setCustomers(data.content))
+        .catch(err => console.error(err))
+    }
+
+    const getTrainings = () => {
+        fetch(userid)
+        .then(response => response.json())
+        .then(data => setTrainings(data.content))
         .catch(err => console.error(err))
     }
 
@@ -55,8 +65,8 @@ export default function Customerlist() {
         .catch(err => console.error(err))
     }
 
-    const newTraining = (training) => {
-        fetch(Addtraining.getUserid,
+    const addTraining = (training) => {
+        fetch(userid,
             {
                 method: 'POST',
                 headers: {
@@ -65,9 +75,11 @@ export default function Customerlist() {
                 body: JSON.stringify(training)
             }
         )
-        .then(_ => Addtraining.getTraining())
+        .then(_ => getTrainings())
         .then(_ => {
             setMsg('New training added');
+            console.log(training)
+            console.log(userid)
             setOpen(true);
         })
         .catch(err => console.error(err))
@@ -97,11 +109,11 @@ export default function Customerlist() {
 
     const columns = [
         {
-            accessor: 'links[2].href',
+            //accessor: 'links[2].href',
             filterable: false,
             sortable: false,
             width: 165,
-            Cell: ({value}) => (<Addtraining newTraining={newTraining} />)
+            Cell: row => (<Button onClick={() => setUserid(row.original.links[2].href)}><Addtraining addTraining={addTraining} /></Button>)
         },
         {
             Header: 'Firstname',

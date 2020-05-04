@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
+import ReactTable from 'react-table-v6'
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -10,10 +11,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 export default function Addtraining(props) {
     const [open, setOpen] = useState(false);
     const [training, setTraining] = useState({activity:'', date:'', duration:''});
-    const [userid, setUserid] = useState('');
 
 const handleClickOpen = () => {
-    // userid=(row.original.links[2].href);
     setOpen(true);
 }
 
@@ -37,7 +36,7 @@ const inputChanged = (event) => {
                 New training
             </Button>
             <Dialog open={open} disableBackdropClick={true} disableEscapeKeyDown={true} onClose={handleClose} aria-labelledby="form-dialog-title">
-            <DialogTitle id="form-dialog-title">New training</DialogTitle>
+            <DialogTitle id="form-dialog-title">Add new training</DialogTitle>
             <DialogContent>
             <TextField
                 autoFocus
