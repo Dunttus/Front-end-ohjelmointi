@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from "material-table";
-import Moment from 'react-moment';
 
 import Search from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
@@ -21,9 +20,9 @@ export default function Traininglist() {
     }, [])
 
     const getTrainings = () => {
-        fetch('https://customerrest.herokuapp.com/api/trainings')
+        fetch('https://customerrest.herokuapp.com/gettrainings')
         .then(response => response.json())
-        .then(data => setTrainings(data.content))
+        .then(data => setTrainings(data))
         .catch(err => console.error(err))
     }
 
@@ -39,6 +38,14 @@ export default function Traininglist() {
         {
             title: 'Min',
             field: 'duration'
+        },
+        {
+            title: 'Firstname',
+            field: 'customer.firstname'
+        },
+        {
+            title: 'Lastname',
+            field: 'customer.lastname'
         }
     ]
 
