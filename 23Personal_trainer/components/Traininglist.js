@@ -49,7 +49,7 @@ export default function Traininglist() {
         },
         {
             Header: "Date",
-            Cell: row => (<Moment format="YYYY MMM D" withTitle>{"date"}</Moment>)
+            accessor: "date"
         },
         {
             Header: "Min",

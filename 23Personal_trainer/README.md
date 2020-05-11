@@ -18,17 +18,31 @@ yarn start
 
 ## Tehtävä
 **22Personal_trainer** - Henkilökohtainen valmentaja tietokanta front-end, josta voidaan hakea, lajitella, lisätä ja poistaa asiakkaita. \
- \
-Adding new customer
-![Trainer Table](../img/trainer_v3.PNG)
 \
-Customer added successfully
-![Trainer Table](../img/trainer_v4.PNG)
-
+Customer list alkusivu
+![Customer Table1](../img/t2k1.PNG)
+\
+Customer list asiakas lisäys
+![Customer Table2](../img/t2k2.PNG)
+\
+Customer list asiakas muokkas
+![Customer Table3](../img/t2k3.PNG)
+\
+Customer list asiakas poisto
+![Customer Table4](../img/t2k4.PNG)
+\
+Customer list uusi treenaus
+![Customer Table5](../img/t2k5.PNG)
+\
+Trainings list alkusivu
+![Trainer Table1](../img/t2k6.PNG)
+\
+Trainings list treenin poisto
+![Trainer Table2](../img/t2k7.PNG)
+\
 ## Todo
 Customerlist asiakkaille ajan varaus nappi toimimaan \ 
-Haetaan Customerlistiin asiakas nimi \
-Traininglist moment ajat toimimaan sanoo invalid date tälää hetkellä
+Traininglist moment ajat toimimaan sanoo invalid date miten korjataan
 
 ## Lähteet
 Juha Hinkula 2020, Haaga-Helia: Front end -ohjelmointi kurssi SWD4TN026-3003. \

@@ -13,6 +13,7 @@ React, YARN, npm, Node.js, JavaScript, React-table, React router, Material-UI.
 **/22Personal_trainer_material_table** - Henkilökohtainen valmentaja tietokanta, josta voidaan etsiä asiakkaita ja treenaus aikoja.
 **/22Personal_trainer** - Henkilökohtainen valmentaja tietokanta, josta voidaan muokata, poistaa ja lisätä asiakkaita.
 
+## Miten asentaa React sivu Google App Engineen blog: [jonihakala.home.blog](https://jonihakala.home.blog/2020/05/11/deploying-react-site-as-paas/)
 
 ## Lähteet
 Juha Hinkula 2020, Haaga-Helia: Front end -ohjelmointi kurssi SWD4TN026-3003.
