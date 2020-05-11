@@ -18,28 +18,27 @@ yarn start
 
 ## Tehtävä
 **22Personal_trainer** - Henkilökohtainen valmentaja tietokanta front-end, josta voidaan hakea, lajitella, lisätä ja poistaa asiakkaita. \
-\
-Customer list alkusivu
+
+#### Customer list alkusivu
 ![Customer Table1](../img/t2k1.PNG)
-\
-Customer list asiakas lisäys
+
+#### Customer list asiakas lisäys
 ![Customer Table2](../img/t2k2.PNG)
-\
-Customer list asiakas muokkas
+
+#### Customer list asiakas muokkas
 ![Customer Table3](../img/t2k3.PNG)
-\
-Customer list asiakas poisto
+
+#### Customer list asiakas poisto
 ![Customer Table4](../img/t2k4.PNG)
-\
-Customer list uusi treenaus
+
+#### Customer list uusi treenaus
 ![Customer Table5](../img/t2k5.PNG)
-\
-Trainings list alkusivu
+
+#### Trainings list alkusivu
 ![Trainer Table1](../img/t2k6.PNG)
-\
-Trainings list treenin poisto
+
+#### Trainings list treenin poisto
 ![Trainer Table2](../img/t2k7.PNG)
-\
 ## Todo
 Customerlist asiakkaille ajan varaus nappi toimimaan \ 
 Traininglist moment ajat toimimaan sanoo invalid date miten korjataan
